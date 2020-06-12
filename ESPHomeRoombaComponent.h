@@ -87,7 +87,7 @@ class RoombaComponent : public PollingComponent, public CustomMQTTDevice
 
         cleaningState = current < -300;
         dockedState = current > -50;
-        chargingState = charging == Roomba::ChargeStateReconditioningCharging || charging == Roomba::ChargeStateFullChanrging || charging == Roomba::ChargeStateTrickleCharging;
+        chargingState = charging == Roomba::ChargeStateReconditioningCharging || charging == Roomba::ChargeStateFullCharging || charging == Roomba::ChargeStateTrickleCharging;
 
         // Only publish new states if there was a change
         if (this->distanceSensor->state != distance) {
